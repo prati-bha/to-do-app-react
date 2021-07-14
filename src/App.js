@@ -20,12 +20,12 @@ function App() {
           setTasks={setTasks}
           isAdmin={isAdmin}
         />
-        <AddTask
+        {isAdmin && <AddTask
           tasks={tasks}
           setTasks={setTasks}
           isSubTask={false}
           isAdmin={isAdmin}
-        />
+        />}
       </Card>
     </div>
   );
