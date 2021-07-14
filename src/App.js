@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import { Card } from 'antd';
+import { useState } from 'react';
+import AdminInput from './Components/AdminInput';
+import FilterItem from './Components/FilterItem';
+import AddTask from './Components/AddTask';
 import './App.css';
 
 function App() {
+  const [ tasks, setTasks ] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AdminInput />
+      <Card title="To-Do-App" type="inner">
+        <FilterItem
+          tasks={tasks}
+          setTasks={setTasks}
+        />
+        <AddTask
+          tasks={tasks}
+          setTasks={setTasks} />
+      </Card>
     </div>
   );
 }
