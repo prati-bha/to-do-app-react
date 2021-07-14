@@ -4,7 +4,7 @@ import ListTask from '../ListTask';
 
 const { TabPane } = Tabs;
 function index(props) {
-    const { tasks, setTasks } = props;
+    const { tasks, setTasks, isAdmin } = props;
     return (
         <div>
             <Tabs defaultActiveKey="All" centered>
@@ -13,6 +13,7 @@ function index(props) {
                         tasks={tasks}
                         source={tasks}
                         setTasks={setTasks} 
+                        isAdmin={isAdmin}
                     />
                 </TabPane>
                 <TabPane tab="Active" key="Active">
@@ -20,6 +21,7 @@ function index(props) {
                         tasks={tasks}
                         source={tasks.filter((item) => !item.isDone)}
                         setTasks={setTasks}
+                        isAdmin={isAdmin}
                     />
                 </TabPane>
                 <TabPane tab="Completed" key="Completed">
@@ -27,6 +29,7 @@ function index(props) {
                         tasks={tasks}
                         source={tasks.filter((item) => item.isDone)}
                         setTasks={setTasks}
+                        isAdmin={isAdmin}
                     />
                 </TabPane>
             </Tabs>

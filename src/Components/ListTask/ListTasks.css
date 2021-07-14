@@ -1,0 +1,15 @@
+.subTaskContainer {
+    margin-top: 10px;
+    width: 50%;
+    margin-left:auto;
+    margin-right: auto;   
+}
+.subTaskListContainer {
+    margin-top: 20px;
+}
+.ant-list-item {
+    flex-direction: column !important;
+}
+.ant-checkbox-wrapper {
+    margin-right: 10px !important;
+}

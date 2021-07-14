@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import { Input } from 'antd';
 
@@ -6,10 +7,10 @@ function EditItem(props) {
     const { tasks, setTasks, taskKey } = props;
     const taskIndex = tasks.findIndex((elem) => elem.key === taskKey);
     useEffect(() => {
-        const currentTask = [...tasks];
+        const currentTask = [...tasks]; 
         currentTask[taskIndex].title = editItemTitle;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [editItemTitle])
+        setTasks(currentTask)
+    },[editItemTitle])
     return (
         <div>
             <Input value={editItemTitle} onChange={e => setEditItemTitle(e.target.value)} />
